@@ -69,11 +69,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 .toggle-btn:hover {
-  background: var(--bg);
-  color: var(--blue);
+  color: white;
 }
 
 /* Search */
@@ -213,11 +213,12 @@
   text-overflow: ellipsis;
   display: block;
   transition: all 0.15s ease;
+  color: white;
 }
 
 .hist-item:hover {
   background: var(--bg);
-  color: var(--brown);
+  color: white;
 }
 
 /* User */

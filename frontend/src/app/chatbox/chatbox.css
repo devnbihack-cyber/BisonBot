@@ -146,8 +146,14 @@
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .orb {
@@ -157,8 +163,13 @@
 }
 
 @keyframes orbFloat {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .title {
@@ -171,7 +182,6 @@
   line-height: 1.25;
   letter-spacing: -0.02em;
 }
-
 
 .name {
   color: #1e63ad;
@@ -250,11 +260,8 @@
 
 .chat-input-footer {
   padding: 16px 24px;
-  background: #ffffff;
-  border-top: 1px solid #01a8e5;
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
   /* position: fixed; */
 }
-
