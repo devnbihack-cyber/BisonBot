@@ -46,3 +46,23 @@ rasa shell
 ```bash
 rasa run --enable-api --cors "*"
 ```
+
+## Running again after the setup
+
+- Use 2 terminals :
+- In the first terminal : change the envirment to run python <= 3.10 as follows
+  
+  ```bash
+  conda activate env_name
+  cd 'to the same directory as the project'
+  rasa run actions
+  ```
+- In the second terminal (optional if you want to interact with chat directly from terminal)
+  
+  ```bash
+  conda activate env_name
+  cd 'to the same directory as the project'
+  rasa train
+  rasa shell
+  ``` 
+
