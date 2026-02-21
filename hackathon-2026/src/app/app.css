@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.shell {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+app-side-bar {
+  flex-shrink: 0;
+  margin-top: 70px;
+}
+
+app-chatbox {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}

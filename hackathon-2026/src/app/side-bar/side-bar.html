@@ -1,0 +1,35 @@
+<div class="sb" [class.collapsed]="isCollapsed">
+  <!-- Header -->
+  <div class="sb-header">
+    <div class="brand">
+      <div class="logo"><img src="avatar.jpg" class="logo" /></div>
+      <div class="brand-name">BisonBot</div>
+    </div>
+
+    <button class="toggle-btn" type="button" (click)="toggleSidebar()" aria-label="Toggle sidebar">
+      {{ isCollapsed ? '»' : '«' }}
+    </button>
+  </div>
+
+  <!-- Nav -->
+  <nav class="sb-nav"></nav>
+
+  <div class="sb-chats">
+    <div class="group">
+      <div class="group-title">Chats</div>
+      <button
+        class="hist-item"
+        type="button"
+        *ngFor="let session of getSessions()"
+        (click)="loadSession(session.id)"
+      >
+        {{ session.title }}
+      </button>
+    </div>
+
+    <!-- Empty state -->
+    <div class="group" *ngIf="sessions.length === 0">
+      <div class="group-title">No conversations yet</div>
+    </div>
+  </div>
+</div>

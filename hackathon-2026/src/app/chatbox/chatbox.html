@@ -1,0 +1,69 @@
+<div class="page">
+  <!-- Top bar -->
+  <header class="topbar">
+    <button class="brand" type="button"></button>
+
+    <div class="top-actions">
+      <button class="new-chat" type="button" (click)="startNewChat()">＋ New Chat</button>
+    </div>
+  </header>
+
+  <main class="chat-container" *ngIf="messages.length > 0">
+    <div class="messages">
+      <div
+        *ngFor="let message of messages"
+        [class.user-message]="message.sender === 'user'"
+        [class.bot-message]="message.sender === 'bot'"
+        class="message"
+      >
+        <div class="message-content">{{ message.text }}</div>
+      </div>
+
+      <div *ngIf="isLoading" class="message bot-message">
+        <div class="message-content typing"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- shows when no message-->
+  <main class="center" *ngIf="messages.length === 0">
+    <img src="umlogo.png" class="orb" />
+
+    <h1 class="title">
+      Good Morning, <span class="name">Student</span><br />
+      <span>Let's make sure you're not taking</span>
+      <br />
+      <span class="accent">the wrong class again.</span>
+    </h1>
+
+    <!-- Prompt box-->
+    <section class="prompt">
+      <form [formGroup]="prompt" (ngSubmit)="onSubmit()">
+        <div class="prompt-input">
+          <span class="spark">🦬</span>
+          <input type="text" placeholder="Ask us....." formControlName="chat" />
+        </div>
+
+        <div class="prompt-footer">
+          <button class="send" type="submit" [disabled]="!prompt.valid">➤</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- shows when chatting -->
+  <footer class="chat-input-footer" *ngIf="messages.length > 0">
+    <section class="prompt">
+      <form [formGroup]="prompt" (ngSubmit)="onSubmit()">
+        <div class="prompt-input">
+          <span class="spark">🦬</span>
+          <input type="text" placeholder="Type your message..." formControlName="chat" />
+        </div>
+
+        <div class="prompt-footer">
+          <button class="send" type="submit" [disabled]="!prompt.valid || isLoading">➤</button>
+        </div>
+      </form>
+    </section>
+  </footer>
+</div>

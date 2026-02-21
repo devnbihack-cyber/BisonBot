@@ -1,0 +1,282 @@
+/* u of m color palette */
+:root {
+  --blue: #1e63ad;
+  --sky: #01a8e5;
+  --white: #ffffff;
+  --brown: #3d1606;
+  --amber: #fbb315;
+  --bg: #f4f8fd;
+}
+
+.sb {
+  width: 260px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-right: 2px solid var(--line);
+  position: fixed;
+  transition: width 0.3s ease;
+  margin-top: -6px;
+}
+
+.sb.collapsed {
+  width: 56px;
+}
+
+/* Header */
+.sb-header {
+  padding: 16px 14px 12px;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brown);
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: -0.02em;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 16px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn:hover {
+  background: var(--bg);
+  color: var(--blue);
+}
+
+/* Search */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+
+.sb.collapsed .search {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-icon {
+  font-size: 16px;
+}
+
+.search input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  width: 100%;
+  font-size: 13px;
+  color: var(--brown);
+}
+
+.search input::placeholder {
+  color: var(--muted);
+}
+
+.clear {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Nav */
+.sb-nav {
+  padding: 8px 10px 4px;
+}
+
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: var(--brown);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.15s ease;
+}
+
+.nav-item:hover {
+  background: var(--bg);
+  color: var(--blue);
+}
+.nav-item.active {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.nav-text {
+  transition: opacity 0.2s ease;
+}
+.sb.collapsed .nav-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+.sb.collapsed .clear {
+  opacity: 0;
+}
+
+.sb.collapsed .logo {
+  opacity: 0;
+}
+
+.sb.collapsed .icon {
+  opacity: 0;
+}
+
+/* History */
+.sb-chats {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 10px 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+  transition: opacity 0.2s ease;
+}
+
+.sb.collapsed .sb-chats {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.group {
+  margin-top: 12px;
+}
+
+.group-title {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sky);
+  padding: 4px 6px 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hist-item {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  transition: all 0.15s ease;
+}
+
+.hist-item:hover {
+  background: var(--bg);
+  color: var(--brown);
+}
+
+/* User */
+.sb-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-top: 2px solid var(--amber);
+}
+
+.sb.collapsed .sb-user {
+  flex-direction: column;
+  padding: 10px 8px;
+  gap: 8px;
+}
+
+.avatar,
+.avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 2px solid var(--amber);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.user-text {
+  flex: 1;
+  min-width: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sb.collapsed .user-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brown);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-menu {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 18px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.user-menu:hover {
+  background: var(--bg);
+  color: var(--blue);
+}
