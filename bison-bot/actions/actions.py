@@ -6,7 +6,7 @@ import os
 import requests
 import json
 
-LLM_PROVIDER = "ollama"  # Options: "anthropic", "openai", "ollama"
+LLM_PROVIDER = "ollama"
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 
