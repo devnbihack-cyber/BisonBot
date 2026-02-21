@@ -6,13 +6,10 @@ import os
 import requests
 import json
 
-# Choose your LLM provider - uncomment the one you want to use
 LLM_PROVIDER = "ollama"  # Options: "anthropic", "openai", "ollama"
 
-# API Configuration
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 
-# System prompt that defines the chatbot's behavior
 SYSTEM_PROMPT = """You are a helpful assistant for the University of Manitoba (UofM). 
 Your role is to provide accurate, helpful, and friendly information about:
 - Academic programs and faculties
