@@ -4,7 +4,6 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 import os
 import requests
-import json
 import re
 import faiss
 import numpy as np
