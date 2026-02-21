@@ -1,0 +1,41 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_university_question
+  - affirm
+  - deny
+  - out_of_scope
+
+entities:
+  - university_topic
+
+slots:
+  university_topic:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: university_topic
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm the University of Manitoba assistant. How can I help you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Feel free to come back if you have more questions about the University of Manitoba."
+
+  utter_out_of_scope:
+    - text: "I'm sorry, but I can only answer questions related to the University of Manitoba. Please ask me something about the university, such as admissions, programs, campus life, or facilities."
+
+  utter_ask_rephrase:
+    - text: "I'm not sure I understood that. Could you rephrase your question about the University of Manitoba?"
+
+actions:
+  - action_answer_university_question
+  - action_check_university_relevance
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,106 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - hey there
+      - hi there
+      - greetings
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you later
+      - see you
+      - talk to you later
+      - bye bye
+      - gotta go
+      - have a good day
+      - catch you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - yeah
+      - yep
+      - sure
+      - correct
+      - that's right
+      - absolutely
+      - of course
+
+  - intent: deny
+    examples: |
+      - no
+      - nope
+      - not really
+      - no thanks
+      - that's not right
+      - incorrect
+      - I don't think so
+
+  - intent: ask_university_question
+    examples: |
+      - What programs does University of Manitoba offer?
+      - Tell me about admissions at UofM
+      - How do I apply to University of Manitoba?
+      - What is the tuition fee?
+      - Where is the university located?
+      - Tell me about campus facilities
+      - What are the residence options?
+      - How many students attend?
+      - What research opportunities are available?
+      - Tell me about the engineering program
+      - What scholarships are available?
+      - How is student life at UofM?
+      - What are the entry requirements?
+      - I want to know about the Faculty of Science
+      - Can you tell me about co-op programs?
+      - What's the campus like?
+      - Tell me about the library
+      - Are there sports facilities?
+      - What clubs and organizations exist?
+      - How do I get to campus?
+      - What's the acceptance rate?
+      - Tell me about graduate programs
+      - I'm interested in studying business at Manitoba
+      - What's the average class size?
+      - Does the university offer online courses?
+      - I'm a high school student interested in attending, what should I know?
+      - I'm considering between different universities and want to know what makes UofM special
+      - My daughter is thinking about studying engineering, can you tell me about the programs and what the experience would be like?
+      - I heard UofM has a good reputation in research, can you elaborate on that?
+      - What kind of support services are available for international students?
+      - I'm interested in the health sciences, particularly the nursing program
+      - How does the university support students with disabilities?
+      - What's the weather like and how does that affect campus life?
+      - I'm interested in Indigenous studies and want to know about cultural support
+      - Tell me everything about residence life and meal plans
+      - I want to transfer from another university, what's the process?
+      - What are the career prospects after graduating from UofM?
+      - Can you describe the surrounding neighborhood and city life in Winnipeg?
+
+  - intent: out_of_scope
+    examples: |
+      - What's the weather today?
+      - Tell me a joke
+      - What's 2 plus 2?
+      - Who won the game last night?
+      - What's the capital of France?
+      - How do I bake a cake?
+      - What time is it?
+      - Tell me about Harvard University
+      - What's the best restaurant nearby?
+      - How do I fix my car?
+      - What's the latest news?
+      - Can you help me with my homework?
+      - What's the meaning of life?
+      - How do I lose weight?
+      - Tell me about politics
